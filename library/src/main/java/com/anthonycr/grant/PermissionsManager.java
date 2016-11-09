@@ -67,6 +67,16 @@ public class PermissionsManager {
     }
 
     /**
+     * Append non-system permissions. Required for use of 3rd party app permissions
+     * (such as com.google.android.gm.permission.READ_CONTENT_PROVIDER).
+     */
+    public void appendPermissions(List<String> permissions) {
+        for (String permission : permissions) {
+            mPermissions.add(permission);
+        }
+    }
+
+    /**
      * This method retrieves all the permissions declared in the application's manifest.
      * It returns a non null array of permisions that can be declared.
      *
